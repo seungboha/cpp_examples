@@ -2,7 +2,10 @@
 
 수열 $\{a_{n}\}$ 을 다음과 같이 정의합니다
 
-$$ a_{n} := 1 + \sum_{m=1}^{\infty}{ 2^{m-1} b(m, n-1) } \quad ,$$ 
+$$ 
+a_{n} := 1 + \sum_{m=1}^{\infty}{ 2^{m-1} b(m, n-1) } \quad ,
+$$
+
 $$ 
 b(m, n) := 
 	\begin{cases}
