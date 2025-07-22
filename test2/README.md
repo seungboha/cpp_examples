@@ -3,7 +3,8 @@
 수열 $\{a_{n}\}$ 을 다음과 같이 정의합니다
 
 $$ a_{n} := 1 + \sum_{m=1}^{\infty}{ 2^{m-1} b(m, n-1) } \quad ,$$ 
-$$ b(m, n) := 
+$$ 
+b(m, n) := 
 	\begin{cases}
 	1, &  2^{m-1} \leq n \; mod \; (2^{m+1}) < 3 \times 2^{m-1} \\
 	0, & otherwise
