@@ -10,7 +10,6 @@ static uint64_t log2(uint64_t A);
 int main()
 {
 	uint64_t A = 0;
-
 	std::cin >> A;
 	std::cout << Solution(A) << std::endl;
 
@@ -18,7 +17,6 @@ int main()
 }
 //========//========//========//========//=======#//========//========//========//========//=======#
 
-// Is it okay to use uint16 or something??
 uint64_t log2(uint64_t A){
 	uint64_t k = 0;
 
@@ -37,36 +35,38 @@ uint64_t Solution(uint64_t A)
 	uint64_t min_idx = 1;
 	// Possible maximum idx
 	uint64_t max_idx = 1;
-	for(uint64_t k=0; k<val_log2; k++){
+	for(uint64_t k=0; k<=val_log2; k++){
 		max_idx *= 2;
 	}
-	std::cout<< "A :" << A << std::endl;
-	std::cout<< "max_idx :" << max_idx << std::endl;
-
+	
 	// Search the idx of A
-	uint64_t idx = 1;
+	uint64_t search_N = 1;
 	uint64_t quotient, remainder;
 
 	quotient = A / 2;
 	remainder = A % 2;
 
-	while(idx != A){
-		if(quotient==0){
+	while(search_N < A){
+		if(quotient == 0){
 			max_idx = max_idx / 2;
+			if(remainder == 0){
+				max_idx = max_idx / 2;
+			}
+			else{
+				search_N *= 2;
+				min_idx = min_idx * 2 + 1;
+			}
 		}
 		else{
-			idx++;
+			search_N++;
+			max_idx = max_idx / 2;
 			min_idx = min_idx * 2 + 1;
+			// A /= 2;
 		}
 
-		if(remainder == 0){
-			max_idx = max_idx / 2;
-		}
-		else{
-			idx++;
-			min_idx = min_idx * 2 + 1;
-		}
+		std::cout << "max_idx:" << max_idx << std::endl;
+		std::cout << "min_idx:" << min_idx << std::endl;
 	}
 
-	return idx;
+	return search_N;
 }
