@@ -37,9 +37,11 @@ uint64_t Solution(uint64_t A)
 	uint64_t min_idx = 1;
 	// Possible maximum idx
 	uint64_t max_idx = 1;
-	for(uint64_t k=0; k==val_log2; k++){
+	for(uint64_t k=0; k<val_log2; k++){
 		max_idx *= 2;
 	}
+	std::cout<< "A :" << A << std::endl;
+	std::cout<< "max_idx :" << max_idx << std::endl;
 
 	// Search the idx of A
 	uint64_t idx = 1;
