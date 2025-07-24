@@ -6,13 +6,13 @@ $$
 a_{n} := 1 + \sum_{m=1}^{\infty}{ 2^{m-1} b(m, n-1) } \quad ,
 $$
 
-$$ 
-b(m, n) := 
+$$ b(m, n) := 
 	\begin{cases}
+	% 1, &  2^{m-1} \leq n \; mod \; (2^{m+1}) < 3 \times 2^{m-1} \\
 	1, &  2^{m-1} \leq n \; mod \; (2^{m+1}) < 3 \times 2^{m-1} \\
 	0, & otherwise
-	\end{cases} \quad .
-$$
+	\end{cases} \quad . $$
+
 여기서 $ N \; mod \; d $ 는 정수 $N \geq 0$ 을 자연수 $d$ 로 나눈 나머지를 의미합니다(단, $0 \; mod \; d $ = 0). 이 때 자연수 $A$ 가 주어지면 $A$가 수열 $\{a_{n}\}$ 의 몇 번째 원소인지 출력하는 함수 "uint64_t Solution(uint64_t A);" 를 파일 "test2.cpp" 에 구현하여 다음 "입력/출력" 사항을 만족시키세요.
 
 
