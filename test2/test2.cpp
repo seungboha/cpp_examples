@@ -22,6 +22,9 @@ int main()
 
 uint64_t Solution(uint64_t A)
 {
-	std::array<uint64_t, 8> perm = {1, 2, 4, 3, 7, 8, 6, 5};
+	// std::array<uint64_t, 8> perm = {1, 2, 4, 3, 7, 8, 6, 5};
+	std::array<uint64_t, 8> residue = {0, 1, 2, 3, 4, 5, 6, 7};
+	std::array<uint64_t, 8> idx = {1, 2, 4, 3, 8, 7, 5, 6};
+
 	return 0;
 }
